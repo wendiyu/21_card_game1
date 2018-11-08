@@ -1,0 +1,69 @@
+#
+#Created by: Wendi Yu
+#Created on: Nov-07-2018
+#
+#This progarm is the solution for 21 card game
+
+from random import randint
+
+# generate random card for player and dealer
+
+player_card1 = randint( 1,10 ) 
+player_card2 = randint( 1,10 )
+player_card3 = randint( 1,10 ) 
+dealer_card1 = randint( 1,10 )
+dealer_card2 = randint( 1,10 )
+
+# calculate player first two card scores in total
+player_scores1 = (player_card1 + player_card2)
+
+# calculate player has 3 cards scores in total
+player_scores2 = (player_card1 + player_card2 + player_card3)
+
+#calculate dealelr's scores in total
+dealer_card_scores = (dealer_card1 + dealer_card2)
+
+player_card = input("Player first two cards is:")
+print(player_card1 , player_card2)
+
+player_current_scores = input("Player current scores is:")
+print(player_scores1) 
+
+option_text = int(input("Do you want an addtion card? If yes, input 1. If no, input 2. Please, put a number (1 or 2) :"))
+
+if option_text == 2:
+  #  for user who do not wants to have an addtion card 
+  dealer_card = input("Dealer's cards are:")
+  print(dealer_card1,dealer_card2)
+  dealer_scores = input("Dealer's scores is:")
+  print(dealer_card_scores)
+  if (player_scores1 > dealer_card_scores) and (player_scores1 <= 21):
+    print("Player win")
+
+  elif (player_scores1 <= 21) and (dealer_card_scores > 21):
+    print("Player win")
+
+  else :
+    print("Dealer win")
+    
+else:
+  # for user who wants to have an addtion card
+  player_third_card = input("Player third cards is:")
+  print(player_card3)
+  player_total_scores = input("Player's scores is:")
+  print(player_scores2)
+  dealer_card = input("Dealer's cards are:")
+  print(dealer_card1,dealer_card2)
+  dealer_scores = input("Dealer's scores is:")
+  print(dealer_card_scores)
+  if (player_scores2 > dealer_card_scores) and (player_scores2 <= 21):
+    print("Player win")
+
+  elif (player_scores2 <= 21) and (dealer_card_scores > 21):
+    print("Player win")
+
+  else :
+    print("Dealer win")
+
+input ()
+
